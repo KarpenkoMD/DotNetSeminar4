@@ -3,12 +3,12 @@
 6, 1, 33 -> [6, 1, 33] */
 int InputN(int border)
 {
-    int N = 0;
+    int NumberToInput = 0;
     do
     {
         Console.Write($"Введите число больше {border}: ");
-        N = Convert.ToInt32(Console.ReadLine());
-        if (N <= border)
+        NumberToInput = Convert.ToInt32(Console.ReadLine());
+        if (NumberToInput <= border)
         {
             Console.Write("Ошибка!");
             Console.ReadKey();
@@ -17,7 +17,7 @@ int InputN(int border)
 
         else
         {
-            return N;
+            return NumberToInput;
         }
     } while (true);
 }
@@ -45,25 +45,25 @@ void PrintArray(int[] ArrayToPrint)
     Console.WriteLine("]");
 }
 
-string s = "";
-int N = 0;
+string SimbolToCheck = "";
+int ArraySize = 0;
 do
 {
     Console.Clear();
     Console.WriteLine("Хотите задать размер массива вручную? Нажмите 'y' или 'n'. Для выхода нажмите 'q'.");
-    s = Console.ReadLine();
-    if (s == "n")
+    SimbolToCheck = Console.ReadLine();
+    if (SimbolToCheck == "n")
     {
-        N = new Random().Next(1, 100);
+        ArraySize = new Random().Next(1, 100);
 
     }
-    else if (s == "y")
+    else if (SimbolToCheck == "y")
     {
-        N = InputN(0);
+        ArraySize = InputN(0);
     }
-    else if (s == "q") break;
+    else if (SimbolToCheck == "q") break;
 
-    int[] Array = new int[N];
+    int[] Array = new int[ArraySize];
     Array = FillArray(Array);
     PrintArray(Array);
     Console.ReadKey();

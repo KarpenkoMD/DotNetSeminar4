@@ -14,13 +14,13 @@ int NumberSum(int number)
     return Sum;
 }
 
-int N = 0;
+int NumberToInput = 0;
 
 Console.Clear();
 Console.Write("Введите число: ");
-N = Convert.ToInt32(Console.ReadLine());
+NumberToInput = Convert.ToInt32(Console.ReadLine());
 
-int result = NumberSum(N);
+int result = NumberSum(NumberToInput);
 
 Console.WriteLine();
-Console.WriteLine($"Сумма цифр числа {N} равна = {result}.");
+Console.WriteLine($"Сумма цифр числа {NumberToInput} равна = {result}.");

@@ -2,24 +2,24 @@
 3, 5 -> 243 (3⁵)
 2, 4 -> 16 */
 
-double PowN(int A, int B)
+double PowN(int NumberA, int PowB)
 {
-    double result = A;
+    double result = NumberA;
 
-    for (int i = 2; i <= B; i++)
+    for (int i = 2; i <= PowB; i++)
     {
-        result = result * A;
+        result = result * NumberA;
     }
     return result;
 }
 int InputN(int border)
 {
-    int N = 0;
+    int inputN = 0;
     do
     {
         Console.Write($"Введите число больше {border}: ");
-        N = Convert.ToInt32(Console.ReadLine());
-        if (N <= border)
+        inputN = Convert.ToInt32(Console.ReadLine());
+        if (inputN <= border)
         {
             Console.Write("Ошибка!");
             Console.ReadKey();
@@ -28,7 +28,7 @@ int InputN(int border)
 
         else
         {
-            return N;
+            return inputN;
         }
     } while (true);
 }
